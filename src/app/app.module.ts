@@ -7,11 +7,13 @@ import { RouterModule } from '@angular/router';
 import { routes } from './routes'
 import { RecipeService } from '../services/recipe.service';
 import { RecipesComponent } from './recipes/recipes.component';
+import { RecipeFilterPipe } from '../pipe/recipe-filter.pipe';
 
 @NgModule({
    declarations: [
       AppComponent,
-      RecipesComponent
+      RecipesComponent,
+      RecipeFilterPipe
    ],
    imports: [
       BrowserModule,

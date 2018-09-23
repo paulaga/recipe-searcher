@@ -1,13 +1,25 @@
-<div *ngFor="let r of recipes">
-  <p>{{r.title}}</p>
-</div>
-
-<!-- <label>Search:</label>
-<input type="text" [(ngModel)]="searchText" placeholder="Search from ingredients">
-
-<div *ngFor="let recipe of recipes | searchPipe : searchText">
-  <img [src]="recipe.thumbnail" alt="{{recipe.title}} image">
-  <h3>{{recipe.title}}</h3>
-  <p>Ingredientes: {{recipe.ingredients}}</p>
-  <a href="{{recipe.href}}" target="a_blank">+ info</a>
-</div> -->
+<header>
+  <h1>My recipe searcher</h1>
+  <div class="searcher">
+    <label>Search</label>
+    <input type="text" [(ngModel)]="searchText" placeholder="Find your recipe">
+  </div>
+</header>
+<main>
+  <div class="container">
+    <div *ngFor="let recipe of recipes | searchPipe : searchText">
+      <div class="recipe__card">
+        <img class="card__image" [src]="recipe.thumbnail" alt="{{recipe.title}} image">
+        <div class="card__info">
+          <h2>{{recipe.title}}</h2>
+          <h3><span class="text--underline">Ingredientes</span></h3> 
+          <p class="recipe--text">{{recipe.ingredients}}</p>
+        </div>
+        <a class="btn__link" [attr.href]="recipe.href" target="a_blank">+ info</a>
+      </div>
+    </div>
+  </div>
+</main>
+<footer>
+  <p>Paula's technical test for o2o <i class="material-icons">mood</i> <span class="text--thin">Made using <a href="http://www.recipepuppy.com/" target="a_blank">RecipePuppy API</a></span></p>
+</footer>
