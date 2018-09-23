@@ -9,7 +9,10 @@ body{
 
 p{ line-height: 1.5em; }
 
-h1{ color: #e2c15d; }
+h1{ 
+  color: #e2c15d; 
+  font-size: 2.5em;
+}
 
 h2{
   font-size: 1.3em;
@@ -28,7 +31,7 @@ h3{
 .material-icons{    
   color: #795548;
   font-size: .9em;
-  padding: 10px;
+  margin-right: 5px;
 }
 
 /* --text */
@@ -42,11 +45,11 @@ header{
   padding: 20px 0 40px 0;
   text-align: center;
   color: #FFF;
-  background: #795548;
+  background: #4E342E;
 }
 
 /* -- Search form */
-.searcher{ margin-top: 30px; }
+.searcher{ margin-top: 36px; }
 
 label, input{
   display: block;
@@ -70,9 +73,9 @@ input{
   width: 80%;
   margin: 100px auto 50px auto;
   display:grid;
-  grid-template-columns: 30%;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 100%;
-  grid-column-gap: 5%;
+  grid-column-gap: 20px;
   grid-row-gap: 30px;
   grid-template-areas: 'a a a' 
 }
@@ -80,7 +83,6 @@ input{
 .recipe__card{
   grid-area: a;
   margin: 20px 0 30px 0;
-  min-height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -100,7 +102,7 @@ input{
 }
 
 .card__info{
-  margin: 20px;
+  margin: 20px 20px 10px 20px;
   position: relative;
   bottom: 29px;
 }
@@ -138,6 +140,10 @@ footer{
   font-weight: 600;
 }
 
+footer p {
+  margin: 3px;
+}
+
 .text--thin{
   font-weight: 300;
 }
@@ -149,4 +155,39 @@ footer a{
 }
 footer a:hover{
   opacity: 1;
+}
+
+@media only screen and (max-width: 980px){
+  .container{
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+    grid-template-areas: 'a a' 
+  }
+}
+
+@media only screen and (max-width: 650px){
+  body{ font-size: 14px; }
+}
+
+@media only screen and (max-width: 590px){
+  .container{
+    grid-template-columns: 1fr;
+    grid-template-areas: 'a' 
+  }
+  .card__info { margin-bottom: 0; }
+}
+
+@media only screen and (max-width: 460px){
+  h1{ 
+    font-size: 1.8em; 
+    margin-left: 30px; 
+    margin-right: 30px; 
+  }
+  
+  input{ width: 70%; }
+
+  footer{
+    flex-direction: column;
+    height: 22px;
+  }
 }
