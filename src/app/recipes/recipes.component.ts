@@ -8,14 +8,21 @@ import { RecipeService } from '../../services/recipe.service';
 })
 export class RecipesComponent implements OnInit {
   recipes: Object;
-
-  constructor( public Recipes : RecipeService) { }
-
+  
+  constructor( public Recipes : RecipeService) { 
+  }
+  
   ngOnInit() {
-    this.Recipes.getRecipes()
+    let recipeArray = []
+    for(let i = 1; i<=20; i++){
+    this.Recipes.getRecipes(i)
       .subscribe((data: any) => {
-      this.recipes = data.results;
+        data.results.forEach(e => {
+          recipeArray.push(e)
+        })
+      this.recipes = recipeArray;
       })
+    }
   }
 
 }

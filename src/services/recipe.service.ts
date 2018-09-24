@@ -5,13 +5,19 @@ import { map } from 'rxjs/operators'
 @Injectable()
 
 export class RecipeService {
-  private urlPuppy = "/api/?q="
 
   constructor(private http : HttpClient) { }
 
-  getRecipes() {
-    return this.http.get(this.urlPuppy)
-      .pipe(map(res => res));
+  getPages(page){
+    return this.http.get(`/api/?p=${page}`)
+      .pipe(map(res => res))
+  }
+
+  getRecipes(page) {
+    return this.http.get(`/api/?p=${page}`)
+    .pipe(map(res => {
+      return res;
+    }));
   }
 
 }
