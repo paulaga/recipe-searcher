@@ -1,6 +1,6 @@
-## Recipe Searcher
+# Recipe Searcher
 
-This project receives info from RecipePuppy API, and was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+This project receives info from <a href="http://www.recipepuppy.com/about/api/">RecipePuppy API</a>, and was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ### Development server
 
