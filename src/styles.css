@@ -71,6 +71,7 @@ input{
 /*** Recipes ***************************/
 .container{
   width: 80%;
+  min-height: calc(100vh - 418px);
   margin: 100px auto 50px auto;
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
